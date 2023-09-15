@@ -125,4 +125,7 @@ div.cardTextBox {
 button.deleteButtonStore {
   margin: 0.2rem auto 1rem auto;
 }
-
+/* InputStore */
+div#inputStoreBox {
+  border: 2px dashed black;
+}
