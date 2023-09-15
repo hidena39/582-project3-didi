@@ -11,7 +11,6 @@ function InputStore() {
       body: JSON.stringify(formData),
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
     })
       .then((res) => {
@@ -20,6 +19,7 @@ function InputStore() {
       .then((data) => {
         console.log(data);
         document.querySelector("#storename").value = "";
+        window.location.reload(true);
       });
   };
   return (

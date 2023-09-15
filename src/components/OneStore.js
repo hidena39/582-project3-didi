@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import StoreStore from "../components/PiniaStorelist";
 
 function OneStore(props) {
   const deleteStore = () => {
@@ -23,6 +21,7 @@ function OneStore(props) {
       })
       .then((data) => {
         console.log(data);
+        window.location.reload(true);
       });
   };
 

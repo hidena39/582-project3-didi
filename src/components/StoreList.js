@@ -7,13 +7,12 @@ function StoreList() {
     <div>
       {storeInfo.length > 0 ? (
         <div>
-          {/* <OneStore key={storeInfo[0]._id} name={storeInfo[0]} /> */}
           {storeInfo.map((item) => (
             <OneStore key={item._id} name={item} />
           ))}
         </div>
       ) : (
-        <p>You don't have anythiung to shop right now!</p>
+        <h3>You don't have anything to shop right now!</h3>
       )}
     </div>
   );

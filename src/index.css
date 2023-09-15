@@ -125,7 +125,74 @@ div.cardTextBox {
 button.deleteButtonStore {
   margin: 0.2rem auto 1rem auto;
 }
-/* InputStore */
+/* ------HomePage ------*/
+div.homePageContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+div#titleBox {
+  border: 4px black solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+div#iconFamily {
+  width: 100%;
+  height: auto;
+}
+div#iconFamily img {
+   display: block;
+   margin: 0 auto;
+   width: 90%;
+   max-width: 300px;
+   height: auto;
+ }
+div#iconTeam {
+  display: flex;
+  justify-content: center;
+}
+div#iconTeam img{
+      margin: 0 auto;
+      width: 90%;
+      max-width: 500px;
+      height: auto;
+}
+/* ------EachstorePage------ */
+div.listPageContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav {
+  position: relative;
+  width: 110px;
+  margin-left: 1rem;
+}
+
+img#homeImage {
+  width: 110px;
+  height: auto;
+}
+
+div#textHome {
+  position: absolute;
+  top: 70px;
+  left: 30px;
+  color: white;
+}
+
+img#listImage {
+  display: block;
+  margin: 0 auto;
+  width: 50vw;
+  max-width: 200px;
+}
+
+div#homeButton {
+  display: block;
+}
+/* ------InputStore ------*/
 div#inputStoreBox {
   border: 2px dashed black;
 }
