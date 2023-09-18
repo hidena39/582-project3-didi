@@ -12,7 +12,6 @@ function OneStore(props) {
         body: JSON.stringify({ storename: storename }),
         headers: {
           "Content-Type": "application/json",
-          // 'Content-Type': 'application/x-www-form-urlencoded',
         },
       }
     )

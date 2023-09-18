@@ -196,3 +196,11 @@ div#homeButton {
 div#inputStoreBox {
   border: 2px dashed black;
 }
+/* ------nputCategoryAndStore------ */
+h3#addItem {
+  margin-top: 3rem;
+}
+
+div#inputListBox {
+  border: 2px dashed black;
+}

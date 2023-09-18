@@ -1,5 +1,5 @@
 import OneStore from "./OneStore";
-import StoreStore from "../components/PiniaStorelist";
+import StoreStore from "./PiniaStorelist";
 
 function StoreList() {
   const storeInfo = StoreStore(); // Get the data from the StoreStore component
