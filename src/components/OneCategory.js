@@ -1,9 +1,25 @@
-// import OneItem from "./OneItem";
+import StoreStore from "./PiniaStorelist";
+import OneItem from "./OneItem";
 import { useParams } from "react-router-dom";
 
 function OneCategory(props) {
   const { storename } = useParams();
   console.log("storename", storename);
+  const storeInfo = StoreStore();
+  const chosenStore = storeInfo.filter((item) => item.storename === storename);
+  if (chosenStore.length === 0) {
+    return <br></br>;
+  }
+  const allCategories = chosenStore[0].categories;
+  console.log("categories", allCategories);
+  const allItems = allCategories.filter(
+    (item) => item.category === props.name.category
+  );
+  if (allItems.length === 0) {
+    return <br></br>;
+  }
+  const Items = allItems[0].items;
+
   const deleteCategory = () => {
     console.log("submitted");
     const oneCategory = props.name.category;
@@ -34,13 +50,22 @@ function OneCategory(props) {
       <button className="deleteButton" onClick={deleteCategory}>
         delete category
       </button>
-      {/* <div id="itemContainer">
-      <OneItem
-        v-for="item in items"
-        :key="item.item"
-        :oneItem="item.item"
-        :oneCategory="oneCategory"
-      /> */}
+
+      {Items.length > 0 ? (
+        <div id="itemContainer">
+          {Items.map((item, index) => (
+            <OneItem
+              key={index}
+              name={item}
+              oneCategory={props.name.category}
+            />
+          ))}
+        </div>
+      ) : (
+        <div id="itemContainer">
+          <p>It seems not shopping to do in this category</p>
+        </div>
+      )}
     </div>
   );
 }

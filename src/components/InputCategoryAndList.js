@@ -6,7 +6,7 @@ function InputCategoryAndList() {
   const storeInfo = StoreStore();
   const chosenStore = storeInfo.filter((item) => item.storename === storename);
   if (chosenStore.length === 0) {
-    return <h3>It seems this store no longer exist...?</h3>;
+    return <br></br>;
   }
   const allCategories = chosenStore[0].categories;
 
