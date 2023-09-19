@@ -1,5 +1,5 @@
 import StoreList from "../components/StoreList";
-import UserList from "../components/Userlist";
+import UserList from "../components/UserList";
 import InputStore from "../components/InputStore";
 import familyImage from "../assets/family.png";
 import teamWork from "../assets/team-work.png";

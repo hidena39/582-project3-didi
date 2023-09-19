@@ -1,5 +1,5 @@
-import StoreUser from "./components/PiniaUserlist.vue";
-import OneUser from "./components/OneUser.vue";
+import StoreUser from "./PiniaUserlist";
+import OneUser from "./OneUser";
 
 function UserList() {
   const userInfo = StoreUser();
