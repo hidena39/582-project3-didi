@@ -4,15 +4,17 @@ import StoreStore from "./PiniaStorelist";
 function StoreList() {
   const storeInfo = StoreStore(); // Get the data from the StoreStore component
   return (
-    <div>
+    <div className="boxes" id="storeListBox">
       {storeInfo.length > 0 ? (
-        <div>
+        <div className="storeCardList">
           {storeInfo.map((item) => (
             <OneStore key={item._id} name={item} />
           ))}
         </div>
       ) : (
-        <h3>You don't have anything to shop right now!</h3>
+        <div className="storeCardList">
+          <h3>You don't have anything to shop right now!</h3>
+        </div>
       )}
     </div>
   );

@@ -76,19 +76,25 @@ function InputCategoryAndList() {
 
       <h3 id="addItem">Add item</h3>
       <form onSubmit={sendItemToDB}>
-        {allCategories.length > 0 ? (
-          <select name="categories" id="categories" required>
-            <option value="">Please Select Category</option>
-            {allCategories.map((categories, index) => (
-              <option key={index} value={categories.category}>
-                {categories.category}
-              </option>
-            ))}
-          </select>
+        {allCategories ? (
+          <>
+            {allCategories.length > 0 ? (
+              <select name="categories" id="categories" required>
+                <option value="">Please Select Category</option>
+                {allCategories.map((categories, index) => (
+                  <option key={index} value={categories.category}>
+                    {categories.category}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <select name="categories" id="categories" required>
+                <option value="">Please Select Category</option>
+              </select>
+            )}
+          </>
         ) : (
-          <select name="categories" id="categories" required>
-            <option value="">Please Select Category</option>
-          </select>
+          <p></p>
         )}
 
         <input type="text" id="item" placeholder="Item Name" required />

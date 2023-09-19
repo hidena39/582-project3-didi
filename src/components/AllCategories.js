@@ -15,17 +15,23 @@ function AllCategories() {
   const allCategories = chosenStore[0].categories;
   console.log("allCategories", allCategories);
   return (
-    <div>
-      {allCategories.length > 0 ? (
+    <>
+      {allCategories ? (
         <div>
-          {allCategories.map((categories, index) => (
-            <OneCategory key={index} name={categories} />
-          ))}
+          {allCategories.length > 0 ? (
+            <div>
+              {allCategories.map((categories, index) => (
+                <OneCategory key={index} name={categories} />
+              ))}
+            </div>
+          ) : (
+            <h3>You don't have any category right now!</h3>
+          )}
         </div>
       ) : (
-        <h3>You don't have any category right now!</h3>
+        <h3>Nothing to shop in this store!</h3>
       )}
-    </div>
+    </>
   );
 }
 

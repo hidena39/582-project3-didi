@@ -111,7 +111,28 @@ input.submit:hover{
   background: black;
     color: white;
 }
-/* OneStore */
+/* ------StoreList ------*/
+div#storeListBox {
+  border: 2px dashed black;
+}
+div.storeCardList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 140px);
+  grid-gap: 10px;
+  justify-content: center;
+
+  @media screen and (min-width: 750px) {
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-gap: 12px;
+  }
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(auto-fit, 180px);
+    grid-gap: 14px;
+  }
+}
+/* ------OneStore ------*/
 div#storeCardRouter {
   width: 100%;
   border-radius: 1rem;

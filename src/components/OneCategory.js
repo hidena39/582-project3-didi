@@ -63,7 +63,7 @@ function OneCategory(props) {
         </div>
       ) : (
         <div id="itemContainer">
-          <p>It seems not shopping to do in this category</p>
+          <h3>There are no items in this category</h3>
         </div>
       )}
     </div>
