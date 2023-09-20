@@ -1,5 +1,10 @@
 import StoreUser from "./PiniaUserlist";
-import OneUser from "./OneUser";
+import {
+  OneUser,
+  currentUser,
+  currentUserColor,
+  isAuthorized,
+} from "./OneUser";
 
 function UserList() {
   const userInfo = StoreUser();

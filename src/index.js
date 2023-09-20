@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-// import App from "./App";
+import UserList from "./components/UserList";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
@@ -12,8 +12,8 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <div>
+        <UserList />
         <HomePage />
-        {/* <App /> */}
       </div>
     ),
   },
@@ -21,6 +21,7 @@ const router = createBrowserRouter([
     path: "/each-store/:storename",
     element: (
       <div>
+        <UserList />
         <EachstorePage />
       </div>
     ),
