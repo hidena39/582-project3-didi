@@ -281,5 +281,5 @@ div#userlist {
   border: 3px solid white;
 }
 .chosenUser {
-  border: 4px solid black;
+  border: 4px black solid !important;
 }

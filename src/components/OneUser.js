@@ -4,66 +4,88 @@ import StoreUser from "./PiniaUserlist";
 let currentUser;
 let currentUserColor;
 let isAuthorized;
+let UserColor;
 
 function OneUser(props) {
   const userInfo = StoreUser();
   console.log("userinfo", userInfo);
+  //   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState({});
   const [currentUserColor, setCurrentUserColor] = useState({});
   const [isAuthorized, setIsAuthorized] = useState(false);
 
   useEffect(() => {
-    console.log("currentUser:", currentUser);
-    console.log("currentUserColor:", currentUserColor);
-    console.log("isAuthorized:", isAuthorized);
-  }, [currentUser, currentUserColor, isAuthorized]);
+    checkUserColor();
+    isItAuthorised();
+  }, [currentUser]);
   console.log(currentUser, currentUserColor, isAuthorized);
 
   const changeCurrentUser = () => {
     setCurrentUser(props.name.username);
   };
-  console.log("currentuser", currentUser);
+
   const checkUserColor = () => {
     let findColor = "";
     if (userInfo.length === 0) {
-      return;
-    }
-    for (let i = 0; i < userInfo.length; i++) {
-      if (userInfo[i].username === currentUser) {
-        findColor = userInfo[i].color;
+    } else if (userInfo.length > 0) {
+      for (let i = 0; i < userInfo.length; i++) {
+        if (userInfo[i].username === currentUser) {
+          findColor = userInfo[i].color;
+        }
       }
+      setCurrentUserColor(findColor);
     }
-    setCurrentUserColor(findColor);
   };
-  console.log("stateColor?", currentUserColor);
 
   const isItAuthorised = () => {
     let isItAdmin = false;
     if (userInfo.length === 0) {
-      return;
-    }
-    for (let i = 0; i < userInfo.length; i++) {
-      if (userInfo[i].username === currentUser) {
-        if (userInfo[i].role === "Admin") {
-          isItAdmin = true;
-        } else {
-          isItAdmin = false;
+    } else if (userInfo.length > 0) {
+      for (let i = 0; i < userInfo.length; i++) {
+        if (userInfo[i].username === currentUser) {
+          if (userInfo[i].role === "Admin") {
+            isItAdmin = true;
+          } else {
+            isItAdmin = false;
+          }
         }
       }
+      setIsAuthorized(isItAdmin);
     }
-    console.log("stateAdmin?", isItAdmin);
-    setIsAuthorized(isItAdmin);
+  };
+
+  const UserColor = () => {
+    let theColor = "";
+    if (userInfo.length === 0) {
+    } else if (userInfo.length > 0) {
+      for (const user of userInfo) {
+        if (user.username === props.name.username) {
+          theColor = user.color;
+        }
+      }
+      return theColor;
+    }
+  };
+
+  const removeChosenClass = () => {
+    let removing = document.querySelectorAll(".userButton");
+    console.log("removing", removing);
+    const ArrayRemoving = Array.from(removing);
+    console.log("ArrayRemoving", ArrayRemoving);
+    for (let i = 0; i < ArrayRemoving.length; i++) {
+      ArrayRemoving[i].classList.remove("chosenUser");
+    }
   };
 
   return (
     <button
       className={`userButton ${
         currentUser === props.name.username ? "chosenUser" : ""
-      }}`}
+      }`}
+      style={{ backgroundColor: UserColor() }}
       onClick={() => {
+        removeChosenClass();
         changeCurrentUser();
-        checkUserColor();
-        isItAuthorised();
       }}
     >
       {props.name.username}
@@ -71,4 +93,4 @@ function OneUser(props) {
   );
 }
 
-export { OneUser, currentUser, currentUserColor, isAuthorized };
+export { OneUser, currentUser, currentUserColor, isAuthorized, UserColor };

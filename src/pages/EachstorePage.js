@@ -10,7 +10,6 @@ function EachstorePage() {
   const { storename } = useParams();
   return (
     <>
-      <UserList />
       <div class="listPageContainer">
         <nav>
           <Link to="/">
