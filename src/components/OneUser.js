@@ -9,7 +9,6 @@ let UserColor;
 function OneUser(props) {
   const userInfo = StoreUser();
   console.log("userinfo", userInfo);
-  //   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState({});
   const [currentUserColor, setCurrentUserColor] = useState({});
   const [isAuthorized, setIsAuthorized] = useState(false);
@@ -92,5 +91,5 @@ function OneUser(props) {
     </button>
   );
 }
-
-export { OneUser, currentUser, currentUserColor, isAuthorized, UserColor };
+export default OneUser;
+export { currentUser, currentUserColor, isAuthorized, UserColor };
