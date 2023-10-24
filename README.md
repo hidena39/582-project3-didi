@@ -1,3 +1,35 @@
+# 582-project3-didi
+
+## Project's title
+
+Team Shop!! - migration from Vue.js to React
+
+## About Me
+
+I am a web design student.
+
+## About 582-project3-didi
+
+This repository is mate to learn React. See 582-project2 for the app detail.
+
+## What I have accomplished
+
+The app is able to add store, delete store, add category, delete category, add item, and delete item.
+As you can see in the console, I was not able to make user buttons works cosistantly, making it impossible to change user color background and mark purchased item. 
+
+## How to Install and Run
+
+1. Start 582-project2-codespace "reimagined eureka" in Github codespace
+2. On this code space, run `node insdex.js` and set port visibility to public
+3. Clone, pull or download this repository
+4. Open the folder in VS Code
+5. Install dependencies with `npm install`
+6. Run the app with `npm start`
+
+## License
+
+No license. The default copyright laws apply to this project.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
