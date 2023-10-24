@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import StoreUser from "./PiniaUserlist";
+import ConstInOneUSer from "./ConstInOneUSer.js";
 
 let currentUser;
 let currentUserColor;
@@ -53,7 +54,7 @@ function OneUser(props) {
     }
   };
 
-  const UserColor = () => {
+  function UserColor() {
     let theColor = "";
     if (userInfo.length === 0) {
     } else if (userInfo.length > 0) {
@@ -64,7 +65,7 @@ function OneUser(props) {
       }
       return theColor;
     }
-  };
+  }
 
   const removeChosenClass = () => {
     let removing = document.querySelectorAll(".userButton");
@@ -77,19 +78,21 @@ function OneUser(props) {
   };
 
   return (
-    <button
-      className={`userButton ${
-        currentUser === props.name.username ? "chosenUser" : ""
-      }`}
-      style={{ backgroundColor: UserColor() }}
-      onClick={() => {
-        removeChosenClass();
-        changeCurrentUser();
-      }}
-    >
-      {props.name.username}
-    </button>
+    <>
+      <button
+        className={`userButton ${
+          currentUser === props.name.username ? "chosenUser" : ""
+        }`}
+        style={{ backgroundColor: UserColor() }}
+        onClick={() => {
+          removeChosenClass();
+          changeCurrentUser();
+        }}
+      >
+        {props.name.username}
+      </button>
+      <ConstInOneUSer userColor={currentUserColor} />
+    </>
   );
 }
 export default OneUser;
-export { currentUser, currentUserColor, isAuthorized, UserColor };

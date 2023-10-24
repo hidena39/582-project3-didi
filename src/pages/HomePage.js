@@ -1,10 +1,13 @@
 import StoreList from "../components/StoreList";
-
 import InputStore from "../components/InputStore";
 import familyImage from "../assets/family.png";
 import teamWork from "../assets/team-work.png";
+// import ConstInOneUSer from "../components/ConstInOneUSer";
 
 function HomePage() {
+  // const backgroundColor = ConstInOneUSer();
+  // console.log("background", backgroundColor);
+  //  <div class="homePageContainer" style={{ backgroundColor }} style={{ backgroundColor: backgroundColor }}></div>
   return (
     <div class="homePageContainer">
       <div class="boxes" id="titleBox">

@@ -232,6 +232,36 @@ h3#addItem {
 div#inputListBox {
   border: 2px dashed black;
 }
+/* ------OneCategory------ */
+.listcontainer {
+  width: 100%;
+}
+.listcontainer  button.deleteButton {
+  margin: 0.2rem auto 0 auto;
+}
+
+div#itemContainer {
+  width: 100%;
+  margin: 1rem 0 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 120px);
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+@media screen and (min-width: 750px) {
+div#itemContainer {
+  grid-template-columns: repeat(auto-fit, 150px);
+  grid-gap: 12px;
+}
+}
+
+ @media screen and (min-width: 900px) {
+  div#itemContainer{
+   grid-template-columns: repeat(auto-fit, 180px);
+   grid-gap: 14px;
+  }
+ }
 /* ------OneItem------ */
 div.itemBorder {
   position: relative;
@@ -241,7 +271,7 @@ div.itemBorder {
   border: black 2px solid;
   cursor: pointer;
 }
-div.itemBorder p p {
+div.itemBorder p {
    margin: 1rem;
  }
 div.purchased {
