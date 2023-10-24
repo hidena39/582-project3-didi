@@ -15,7 +15,7 @@ This repository is mate to learn React. See 582-project2 for the app detail.
 ## What I have accomplished
 
 The app is able to add store, delete store, add category, delete category, add item, and delete item.
-As you can see in the console, I was not able to make user buttons works cosistantly, making it impossible to change user color background and mark purchased item. 
+As you can see in the console, I was not able to make user buttons work cosistantly, making it impossible to change user color background and mark purchased item. 
 
 ## How to Install and Run
 
